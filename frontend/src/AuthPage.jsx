@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-undef */
 import axios from 'axios';
 
 const AuthPage = (props) => {
@@ -7,7 +5,7 @@ const AuthPage = (props) => {
       e.preventDefault();
       const { value } = e.target[0];
       axios.post(
-        'http://localhost:3001/authenticate',
+        'http://localhost:3002/authenticate',
         {username: value}
         )
         .then(response => props.onAuth({ ...response.data, secret: value }))
